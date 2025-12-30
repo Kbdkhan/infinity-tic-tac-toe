@@ -33,6 +33,15 @@
       <priority>0.5</priority>
    </url>
 
+      <!-- Blog Page -->
+   <url>
+      <loc>https://www.infinitytictactoe.com/blog.html</loc>
+      <lastmod>2026-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+
 </urlset>
+
 
 
