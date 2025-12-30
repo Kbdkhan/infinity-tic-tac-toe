@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWDGJ19N91"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TWDGJ19N91');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Updates & Strategy Blog - Infinity Tic-Tac-Toe</title>
+    <meta name="description" content="Official blog for Infinity Tic-Tac-Toe. Read strategy guides, patch notes, and development updates for the ultimate neon strategy game.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hero': ['Audiowide', 'cursive'],
+                        'ui': ['Rajdhani', 'sans-serif'],
+                        'code': ['Share Tech Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            bg: '#030712',
+                            panel: 'rgba(10, 15, 30, 0.95)',
+                            accent: '#00f0ff', // Cyan
+                            danger: '#ff003c', // Red
+                            gold: '#fcee0a',   // Yellow
+                        }
+                    },
+                    animation: {
+                        'scan': 'scan 8s linear infinite',
+                    },
+                    keyframes: {
+                        scan: { '0%': { bottom: '100%' }, '100%': { bottom: '-100%' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030508;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: white;
+            min-height: 100vh;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="%2300f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>') 0 0, auto;
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 5;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0, 240, 255, 0.1) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+        
+        a:hover { color: #00f0ff; }
+    </style>
+</head>
+<body class="flex flex-col items-center p-4">
+
+    <div class="scanline"></div>
+
+    <div class="w-full max-w-4xl relative z-10 my-12">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="font-hero text-4xl md:text-6xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyber-accent to-white">TRANSMISSIONS</h1>
+            <p class="text-gray-500 font-code tracking-widest text-xs">OFFICIAL BLOG // UPDATES & STRATEGY</p>
+        </header>
+
+        <!-- Main Blog Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Featured Post (Larger) -->
+            <article class="md:col-span-2 bg-cyber-panel border border-cyber-accent/50 p-8 rounded-xl shadow-[0_0_30px_rgba(0,240,255,0.15)] group hover:border-cyber-accent transition-all relative overflow-hidden">
+                <div class="absolute inset-0 bg-cyber-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+                <div class="relative z-10">
+                    <span class="text-cyber-accent font-code text-xs tracking-widest border border-cyber-accent px-2 py-1 rounded mb-4 inline-block">LATEST UPDATE</span>
+                    <h2 class="text-3xl font-hero text-white mb-4 group-hover:text-cyber-accent transition-colors">Launch Day: Wargod AI Unleashed</h2>
+                    <p class="text-gray-400 font-ui mb-6">We have officially launched Infinity Tic-Tac-Toe 1.0! Learn about the new "Wargod" difficulty mode, featuring a Depth-25 Minimax algorithm that creates an unbeatable opponent.</p>
+                    <div class="flex justify-between items-center border-t border-gray-800 pt-4">
+                        <span class="text-xs text-gray-500 font-code">JAN 01, 2026</span>
+                        <a href="#" class="text-sm font-code text-cyber-accent hover:text-white transition-colors">READ TRANSMISSION →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Standard Post 1 -->
+            <article class="bg-cyber-panel border border-gray-800 p-6 rounded-xl hover:border-gray-600 transition-all group">
+                <h2 class="text-xl font-hero text-white mb-2 group-hover:text-cyber-gold transition-colors">Strategy Guide: The Infinity Loop</h2>
+                <p class="text-sm text-gray-400 font-ui mb-4">How to trap your opponent using the 3-piece vanishing mechanic. Stop thinking about filling the board and start thinking about inventory management.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-[10px] text-gray-600 font-code">DEC 28, 2025</span>
+                    <a href="#" class="text-xs font-code text-gray-400 hover:text-white">READ MORE</a>
+                </div>
+            </article>
+
+            <!-- Standard Post 2 -->
+            <article class="bg-cyber-panel border border-gray-800 p-6 rounded-xl hover:border-gray-600 transition-all group">
+                <h2 class="text-xl font-hero text-white mb-2 group-hover:text-cyber-danger transition-colors">Why We Removed Draws</h2>
+                <p class="text-sm text-gray-400 font-ui mb-4">A deep dive into game design philosophy. Why standard Tic-Tac-Toe is broken and how the "Eat" mechanic fixes competitive play.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-[10px] text-gray-600 font-code">DEC 20, 2025</span>
+                    <a href="#" class="text-xs font-code text-gray-400 hover:text-white">READ MORE</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-16">
+            <a href="index.html" class="text-xs font-code text-gray-500 hover:text-white transition-colors no-underline border border-gray-800 px-6 py-3 rounded hover:border-white">
+                [ ← RETURN TO MAIN MENU ]
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
