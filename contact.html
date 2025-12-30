@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWDGJ19N91"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TWDGJ19N91');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Support - Infinity Tic-Tac-Toe</title>
+    <meta name="description" content="Contact the developer of Infinity Tic-Tac-Toe. Report bugs, suggest features, or just say hello.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hero': ['Audiowide', 'cursive'],
+                        'ui': ['Rajdhani', 'sans-serif'],
+                        'code': ['Share Tech Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            bg: '#030712',
+                            panel: 'rgba(10, 15, 30, 0.95)',
+                            accent: '#00f0ff', // Cyan
+                            danger: '#ff003c', // Red
+                        }
+                    },
+                    animation: {
+                        'scan': 'scan 8s linear infinite',
+                    },
+                    keyframes: {
+                        scan: { '0%': { bottom: '100%' }, '100%': { bottom: '-100%' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030508;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: white;
+            min-height: 100vh;
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 5;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0, 240, 255, 0.1) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+        input, textarea {
+            background: rgba(10, 20, 35, 0.6);
+            border: 1px solid #1f2937;
+            color: #00f0ff;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #00f0ff;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4">
+
+    <div class="scanline"></div>
+
+    <div class="w-full max-w-2xl relative z-10">
+        <!-- Header -->
+        <header class="text-center mb-12">
+            <h1 class="font-hero text-4xl md:text-6xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyber-accent to-white">COMMUNICATIONS</h1>
+            <p class="text-gray-500 font-code tracking-widest text-xs">ESTABLISH UPLINK //</p>
+        </header>
+
+        <!-- Form Container -->
+        <div class="bg-cyber-panel border border-gray-800 p-8 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+            <!-- Decorative Corners -->
+            <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-cyber-accent"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-cyber-accent"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-cyber-accent"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cyber-accent"></div>
+
+            <!-- FormSubmit Logic -->
+            <form action="https://formsubmit.co/xerophyticxunnun@gmail.com" method="POST" class="space-y-6">
+                
+                <!-- Redirect to home page after success -->
+                <input type="hidden" name="_next" value="https://www.infinitytictactoe.com/">
+                <input type="hidden" name="_subject" value="New Message from Infinity Tic-Tac-Toe!">
+                <input type="hidden" name="_captcha" value="false">
+
+                <!-- Name Field -->
+                <div>
+                    <label class="block text-xs font-hero text-gray-400 mb-2 tracking-widest">CODENAME / NAME</label>
+                    <input type="text" name="name" required class="w-full p-4 rounded transition-all" placeholder="Enter your name">
+                </div>
+
+                <!-- Email Field -->
+                <div>
+                    <label class="block text-xs font-hero text-gray-400 mb-2 tracking-widest">FREQUENCY / EMAIL</label>
+                    <input type="email" name="email" required class="w-full p-4 rounded transition-all" placeholder="name@example.com">
+                </div>
+
+                <!-- Message Field -->
+                <div>
+                    <label class="block text-xs font-hero text-gray-400 mb-2 tracking-widest">TRANSMISSION / MESSAGE</label>
+                    <textarea name="message" rows="5" required class="w-full p-4 rounded transition-all" placeholder="Report a bug, suggest a feature, or say hi..."></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="w-full py-4 bg-cyber-accent/10 border border-cyber-accent text-cyber-accent font-hero tracking-widest hover:bg-cyber-accent hover:text-black transition-all duration-300 rounded group relative overflow-hidden">
+                    <span class="relative z-10">SEND TRANSMISSION</span>
+                    <div class="absolute inset-0 bg-cyber-accent/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </button>
+            </form>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-8">
+            <a href="index.html" class="text-xs font-code text-gray-500 hover:text-white transition-colors">
+                [ ← RETURN TO MAIN MENU ]
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
