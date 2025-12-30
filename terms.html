@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWDGJ19N91"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TWDGJ19N91');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Infinity Tic-Tac-Toe</title>
+    <meta name="description" content="Terms of Service for Infinity Tic-Tac-Toe. Rules regarding usage, intellectual property, and disclaimers.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hero': ['Audiowide', 'cursive'],
+                        'ui': ['Rajdhani', 'sans-serif'],
+                        'code': ['Share Tech Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            bg: '#030712',
+                            panel: 'rgba(10, 15, 30, 0.95)',
+                            accent: '#00f0ff', // Cyan
+                            danger: '#ff003c', // Red
+                        }
+                    },
+                    animation: {
+                        'scan': 'scan 8s linear infinite',
+                    },
+                    keyframes: {
+                        scan: { '0%': { bottom: '100%' }, '100%': { bottom: '-100%' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #030508;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: white;
+            min-height: 100vh;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="%2300f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>') 0 0, auto;
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 5;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0, 240, 255, 0.1) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+        
+        /* Typography for Policy Text */
+        h2 { color: #00f0ff; margin-top: 2rem; margin-bottom: 0.5rem; font-family: 'Audiowide', cursive; font-size: 1.25rem; }
+        p { color: #9ca3af; margin-bottom: 1rem; line-height: 1.6; font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; }
+        ul { list-style: disc; padding-left: 1.5rem; color: #d1d5db; margin-bottom: 1rem; font-family: 'Rajdhani', sans-serif; }
+        a { color: #00f0ff; text-decoration: underline; }
+        a:hover { color: white; }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-4">
+
+    <div class="scanline"></div>
+
+    <div class="w-full max-w-3xl relative z-10 my-12">
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="font-hero text-4xl md:text-5xl mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyber-accent to-white">TERMS OF SERVICE</h1>
+            <p class="text-gray-500 font-code tracking-widest text-xs">EFFECTIVE DATE: JANUARY 2026 //</p>
+        </header>
+
+        <!-- Terms Content -->
+        <div class="bg-cyber-panel border border-gray-800 p-8 rounded-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
+            <!-- Decorative Corners -->
+            <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-cyber-accent"></div>
+            <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-cyber-accent"></div>
+            <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-cyber-accent"></div>
+            <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-cyber-accent"></div>
+
+            <article>
+                <p>Welcome to <strong>Infinity Tic-Tac-Toe</strong>. By accessing or playing our game at <strong>infinitytictactoe.com</strong>, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use our website.</p>
+
+                <h2>1. Use License</h2>
+                <p>Infinity Tic-Tac-Toe is free to play for personal, non-commercial use. You may:</p>
+                <ul>
+                    <li>Play the game on any browser.</li>
+                    <li>Share links to the game on social media or other platforms.</li>
+                </ul>
+                <p>You may <strong>not</strong>:</p>
+                <ul>
+                    <li>Modify, reverse engineer, or decompile the game code.</li>
+                    <li>Use the game for commercial purposes without explicit permission.</li>
+                    <li>Remove any copyright or proprietary notations from the materials.</li>
+                </ul>
+
+                <h2>2. Intellectual Property</h2>
+                <p>The game concept, design, code, graphics, and "Neon Infinity" branding are the intellectual property of <strong>Infinity Gaming</strong>. All rights reserved.</p>
+
+                <h2>3. Disclaimer</h2>
+                <p>The materials on infinitytictactoe.com are provided on an 'as is' basis. Infinity Gaming makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+                <p>Further, Infinity Gaming does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its website or otherwise relating to such materials or on any sites linked to this site.</p>
+
+                <h2>4. Limitations</h2>
+                <p>In no event shall Infinity Gaming or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on infinitytictactoe.com, even if Infinity Gaming or an authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+
+                <h2>5. Modifications</h2>
+                <p>Infinity Gaming may revise these terms of service for its website at any time without notice. By using this website you are agreeing to be bound by the then current version of these terms of service.</p>
+
+                <h2>6. Contact</h2>
+                <p>For any questions regarding these Terms, please contact us via our <a href="contact.html">Contact Page</a>.</p>
+            </article>
+        </div>
+
+        <!-- Back Button -->
+        <div class="text-center mt-8">
+            <a href="index.html" class="text-xs font-code text-gray-500 hover:text-white transition-colors no-underline">
+                [ ← RETURN TO MAIN MENU ]
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
