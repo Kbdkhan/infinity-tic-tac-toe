@@ -26,11 +26,12 @@
     <meta property="og:description" content="Play the ultimate strategy game. 3-piece limit, vanishing moves, and intense neon visuals. Play free now.">
     <meta property="og:url" content="https://www.infinitytictactoe.com/">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.infinitytictactoe.com/thumbnail.jpg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><style>.x{stroke:%2300f0ff;stroke-width:10;fill:none;}.bg{fill:%23030712;}</style><rect width='100' height='100' class='bg' rx='20'/><path d='M25,25 L75,75 M75,25 L25,75' class='x'/></svg>">
 
-    <!-- JSON-LD STRUCTURED DATA (VIDEO GAME SCHEMA) -->
+    <!-- JSON-LD STRUCTURED DATA (Standard for GitHub) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -100,16 +101,15 @@
     </script>
 
     <style>
-        /* CRITICAL: Force full height and dark background to override Blogger themes */
         html, body {
             height: 100%;
             width: 100%;
             margin: 0;
             padding: 0;
-            background-color: #030712 !important;
+            background-color: #030712;
             color: white;
             overflow-x: hidden;
-            scroll-behavior: smooth; /* Enable smooth scrolling globally */
+            scroll-behavior: smooth;
         }
         
         #app {
@@ -177,7 +177,7 @@
                 <li><strong>The Goal:</strong> Align 3 of your neon marks horizontally, vertically, or diagonally.</li>
                 <li><strong>The 3-Piece Rule:</strong> Each player can only have 3 pieces on the board. When you place a 4th, the 1st one vanishes.</li>
                 <li><strong>The Twist:</strong> Watch your oldest piece (highlighted in red). If you move again, that piece will disappear. Use this to trap your opponent!</li>
-                <li><strong>Wargod Mode:</strong> Our specialized AI that calculates vanishing moves 12 steps ahead. Good luck.</li>
+                <li><strong>Wargod Mode:</strong> Our specialized AI that calculates vanishing moves 25 steps ahead. Good luck.</li>
                 <li><strong>Timer:</strong> You have 30 seconds to make a decision. Fast thinking is required.</li>
             </ul>
 
@@ -195,7 +195,6 @@
 
     <!-- Game Logic -->
     <script>
-        // WRAPPER: Ensures code runs only after HTML is ready
         window.addEventListener('load', function() {
             
             const AudioEngine = {
