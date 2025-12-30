@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TWDGJ19N91"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TWDGJ19N91');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO OPTIMIZATION -->
+    <title>Infinity Tic-Tac-Toe (Neon Edition) - Play Online Free</title>
+    <meta name="description" content="Play Infinity Tic-Tac-Toe online. The classic game evolved with a 3-piece limit, neon graphics, and unbeatable AI. No download or installation required.">
+    <meta name="keywords" content="Tic Tac Toe, Infinity Tic Tac Toe, Infinite Tic Tac Toe, Eat Tac Toe, Neon Tic Tac Toe, 3 Piece Tic Tac Toe, Strategy Game, Free Browser Games, Unblocked Games">
+    <meta name="author" content="Infinity Gaming">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.infinitytictactoe.com/" />
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Infinity Tic-Tac-Toe (Neon Edition)">
+    <meta property="og:description" content="Play the ultimate strategy game. 3-piece limit, vanishing moves, and intense neon visuals. Play free now.">
+    <meta property="og:url" content="https://www.infinitytictactoe.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><style>.x{stroke:%2300f0ff;stroke-width:10;fill:none;}.bg{fill:%23030712;}</style><rect width='100' height='100' class='bg' rx='20'/><path d='M25,25 L75,75 M75,25 L25,75' class='x'/></svg>">
+
+    <!-- JSON-LD STRUCTURED DATA (VIDEO GAME SCHEMA) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Infinity Tic-Tac-Toe (Neon Edition)",
+      "url": "https://www.infinitytictactoe.com/",
+      "image": "https://www.infinitytictactoe.com/thumbnail.jpg",
+      "description": "A strategic browser game that evolves Tic-Tac-Toe with a 3-piece limit and vanishing moves. Play online for free against AI or friends.",
+      "genre": ["Strategy", "Puzzle", "Board Game"],
+      "gamePlatform": "Web Browser",
+      "applicationCategory": "Browser Game",
+      "operatingSystem": "Any",
+      "playMode": "SinglePlayer, MultiPlayer",
+      "author": {
+        "@type": "Organization",
+        "name": "Infinity Gaming"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hero': ['Audiowide', 'cursive'],
+                        'ui': ['Rajdhani', 'sans-serif'],
+                        'code': ['Share Tech Mono', 'monospace'],
+                    },
+                    colors: {
+                        cyber: {
+                            bg: '#030712',
+                            panel: 'rgba(10, 15, 30, 0.95)',
+                            accent: '#00f0ff', // Cyan
+                            danger: '#ff003c', // Red
+                            gold: '#fcee0a',   // Yellow
+                            void: '#000000'
+                        }
+                    },
+                    animation: {
+                        'scan': 'scan 8s linear infinite',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+                        'flash': 'flash 0.5s',
+                        'bounce-slow': 'bounce 2s infinite',
+                    },
+                    keyframes: {
+                        scan: { '0%': { bottom: '100%' }, '100%': { bottom: '-100%' } },
+                        pulseGlow: { '0%, 100%': { opacity: 1, boxShadow: '0 0 15px currentColor' }, '50%': { opacity: 0.7, boxShadow: '0 0 5px currentColor' } },
+                        flash: { '0%, 100%': { opacity: 1 }, '50%': { opacity: 0 } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CRITICAL: Force full height and dark background to override Blogger themes */
+        html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #030712 !important;
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth; /* Enable smooth scrolling globally */
+        }
+        
+        #app {
+            min-height: 100vh;
+            position: relative;
+            z-index: 10;
+        }
+
+        body {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="%2300f0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/><path d="M13 13l6 6"/></svg>') 0 0, auto;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        button:hover, a:hover {
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="%23ff003c" stroke="%23ff003c" stroke-width="1"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3" fill="white"/></svg>') 16 16, pointer;
+        }
+        .scanline {
+            width: 100%;
+            height: 100px;
+            z-index: 5;
+            background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0, 240, 255, 0.1) 50%, rgba(0,0,0,0) 100%);
+            opacity: 0.1;
+            position: absolute;
+            bottom: 100%;
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+        .piece-enter { animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes popIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .dying { animation: dyingPulse 1s infinite; filter: drop-shadow(0 0 8px #ff003c) !important; }
+        .dying line, .dying circle { stroke: #ff003c !important; }
+        @keyframes dyingPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.9); } }
+        
+        .seo-content h2 { color: #00f0ff; font-family: 'Audiowide', cursive; margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem; }
+        .seo-content h3 { color: #fcee0a; font-family: 'Rajdhani', sans-serif; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.25rem; font-weight: bold; }
+        .seo-content p { color: #9ca3af; margin-bottom: 1rem; line-height: 1.6; }
+        .seo-content ul { list-style-type: disc; padding-left: 1.5rem; color: #d1d5db; margin-bottom: 1rem; }
+        .seo-content li { margin-bottom: 0.5rem; }
+        .seo-content strong { color: white; }
+    </style>
+</head>
+<body class="bg-[#030508] text-white font-ui min-h-screen overflow-x-hidden flex flex-col relative selection:bg-cyber-accent selection:text-black">
+
+    <div class="scanline"></div>
+
+    <!-- GAME AREA -->
+    <div id="app" class="relative z-10 w-full min-h-[100vh] flex flex-col"></div>
+
+    <!-- SEO CONTENT -->
+    <section id="rules-section" class="relative z-10 max-w-4xl mx-auto px-6 py-16 border-t border-gray-800 bg-black/80 backdrop-blur-sm seo-content">
+        <h2 class="text-3xl text-center mb-8">Play Infinity Tic-Tac-Toe Online</h2>
+        <article>
+            <p>Welcome to <strong>Infinity Tic-Tac-Toe</strong>. This isn't just the classic game you played in school—this is the evolved, strategic version designed for the modern web. With our unique 3-piece limit mechanic, draws are impossible, and every move counts.</p>
+
+            <h3>What is Infinity Tic-Tac-Toe?</h3>
+            <p>
+                In standard Tic-Tac-Toe, the game often ends in a draw because the board fills up. In <strong>Infinity Tic-Tac-Toe</strong>, players are limited to 3 pieces each. Once you place a 4th piece, your oldest piece vanishes (or "pops") from the board. This creates an infinite loop of strategy where you must defend, attack, and manage your inventory simultaneously.
+            </p>
+
+            <h3>How to Play</h3>
+            <ul>
+                <li><strong>Select Mode:</strong> Choose Single Player (vs CPU) or Multiplayer (Local PvP).</li>
+                <li><strong>The Goal:</strong> Align 3 of your neon marks horizontally, vertically, or diagonally.</li>
+                <li><strong>The 3-Piece Rule:</strong> Each player can only have 3 pieces on the board. When you place a 4th, the 1st one vanishes.</li>
+                <li><strong>The Twist:</strong> Watch your oldest piece (highlighted in red). If you move again, that piece will disappear. Use this to trap your opponent!</li>
+                <li><strong>Wargod Mode:</strong> Our specialized AI that calculates vanishing moves 12 steps ahead. Good luck.</li>
+                <li><strong>Timer:</strong> You have 30 seconds to make a decision. Fast thinking is required.</li>
+            </ul>
+
+            <h3>Why Play Here?</h3>
+            <ul>
+                <li><strong>No Downloads:</strong> Play directly in your browser on PC, Tablet, or Mobile.</li>
+                <li><strong>Smart AI:</strong> Challenge our 'Wargod' difficulty engine if you think you are a master.</li>
+                <li><strong>Sleek Visuals:</strong> Enjoy a dark mode, cyberpunk aesthetic that is easy on the eyes.</li>
+            </ul>
+        </article>
+        <footer class="mt-12 text-center text-xs text-gray-600 font-code">
+            &copy; 2026 Infinity Tic-Tac-Toe. All rights reserved.
+        </footer>
+    </section>
+
+    <!-- Game Logic -->
+    <script>
+        // WRAPPER: Ensures code runs only after HTML is ready
+        window.addEventListener('load', function() {
+            
+            const AudioEngine = {
+                ctx: null,
+                init: () => { if (!AudioEngine.ctx) AudioEngine.ctx = new (window.AudioContext || window.webkitAudioContext)(); },
+                playTone: (freq, type, duration, vol = 0.1) => {
+                    if (!AudioEngine.ctx) AudioEngine.init();
+                    const osc = AudioEngine.ctx.createOscillator();
+                    const gain = AudioEngine.ctx.createGain();
+                    osc.type = type; osc.frequency.setValueAtTime(freq, AudioEngine.ctx.currentTime);
+                    gain.gain.setValueAtTime(vol, AudioEngine.ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, AudioEngine.ctx.currentTime + duration);
+                    osc.connect(gain); gain.connect(AudioEngine.ctx.destination);
+                    osc.start(); osc.stop(AudioEngine.ctx.currentTime + duration);
+                },
+                hover: () => { AudioEngine.playTone(800, 'sine', 0.05, 0.05); },
+                click: () => { AudioEngine.playTone(400, 'square', 0.1, 0.1); setTimeout(() => AudioEngine.playTone(600, 'square', 0.05, 0.05), 50); },
+                placeX: () => { AudioEngine.playTone(600, 'sawtooth', 0.15, 0.1); setTimeout(() => AudioEngine.playTone(300, 'sine', 0.2, 0.1), 50); },
+                placeO: () => { AudioEngine.playTone(300, 'square', 0.15, 0.1); setTimeout(() => AudioEngine.playTone(150, 'sawtooth', 0.2, 0.1), 50); },
+                win: () => { [440, 554, 659, 880].forEach((freq, i) => { setTimeout(() => AudioEngine.playTone(freq, 'triangle', 0.3, 0.1), i * 100); }); },
+                tick: () => { AudioEngine.playTone(800, 'square', 0.03, 0.05); }
+            };
+
+            const state = { 
+                view: 'landing', 
+                difficulty: 1, 
+                mode: 'pve',
+                config: { player: 'X', cpu: 'O' },
+                game: { board: Array(9).fill(null), xMoves: [], oMoves: [], turn: 'X', winner: null, winningLine: [], scores: { x: 0, o: 0 }, timer: 30, timerId: null } 
+            };
+
+            const AI = {
+                transpositionTable: {}, 
+
+                play: (difficulty) => {
+                    if (state.game.winner) return;
+                    
+                    if (difficulty !== 4) AI.transpositionTable = {};
+
+                    setTimeout(() => {
+                        let move;
+                        const aiSymbol = state.config.cpu;
+                        
+                        if (difficulty === 1) {
+                            // Recruit: 90% Random
+                            if (Math.random() > 0.9) move = AI.findSmartMove(state.game.xMoves, state.game.oMoves, aiSymbol);
+                            if (move === null || move === undefined) move = AI.randomMove(getBoardState());
+                        }
+                        else if (difficulty === 2) move = AI.minimaxRoot(3, aiSymbol); 
+                        else if (difficulty === 3) move = AI.minimaxRoot(6, aiSymbol); 
+                        else move = AI.minimaxRoot(25, aiSymbol); // Wargod: Depth 25
+
+                        if (move !== undefined && move !== null) handleCellClick(move, true);
+                    }, 700);
+                },
+                
+                randomMove: (b) => { 
+                    const e = b.map((v, i) => v === null ? i : null).filter(v => v !== null); 
+                    return e[Math.floor(Math.random() * e.length)]; 
+                },
+                
+                findSmartMove: (xQ, oQ, p) => {
+                    const b = Array(9).fill(null);
+                    xQ.forEach(k => b[k] = 'X');
+                    oQ.forEach(k => b[k] = 'O');
+                    const moves = b.map((v, i) => v === null ? i : null).filter(v => v !== null);
+                    
+                    for (let m of moves) {
+                        const nextX = [...xQ], nextO = [...oQ];
+                        if (p === 'X') { if (nextX.length >= 3) nextX.shift(); nextX.push(m); }
+                        else { if (nextO.length >= 3) nextO.shift(); nextO.push(m); }
+                        const nextB = Array(9).fill(null);
+                        nextX.forEach(k => nextB[k] = 'X');
+                        nextO.forEach(k => nextB[k] = 'O');
+                        if (AI.checkWinSim(nextB, p)) return m;
+                    }
+                    return null;
+                },
+                
+                minimaxRoot: (maxDepth, aiSym) => {
+                    const xQ = [...state.game.xMoves];
+                    const oQ = [...state.game.oMoves];
+                    const b = getBoardState();
+                    const oppSym = aiSym === 'X' ? 'O' : 'X';
+
+                    if (maxDepth >= 9 && xQ.length + oQ.length <= 1) {
+                        if (b[4] === null) return 4; 
+                        return 0; 
+                    }
+
+                    let win = AI.findSmartMove(xQ, oQ, aiSym); 
+                    if (win !== null) return win;
+
+                    if (maxDepth < 20) {
+                        let block = AI.findSmartMove(xQ, oQ, oppSym);
+                        if (block !== null) return block;
+                    }
+
+                    let bestScore = -Infinity;
+                    let bestMoves = [];
+                    const moves = b.map((v, i) => v === null ? i : null).filter(v => v !== null);
+                    
+                    moves.sort((a,b) => (a===4?-1:(b===4?1:(a%2===0 && b%2!==0 ? -1 : 1))));
+
+                    for (let m of moves) {
+                        const nextO = [...oQ]; const nextX = [...xQ];
+                        if (aiSym === 'X') { if (nextX.length >= 3) nextX.shift(); nextX.push(m); }
+                        else { if (nextO.length >= 3) nextO.shift(); nextO.push(m); }
+                        
+                        const score = AI.minimax(nextX, nextO, 0, -Infinity, Infinity, false, maxDepth, aiSym);
+                        
+                        if (score > bestScore) {
+                            bestScore = score;
+                            bestMoves = [m];
+                        } else if (score === bestScore) {
+                            bestMoves.push(m);
+                        }
+                    }
+                    return bestMoves.length > 0 ? bestMoves[Math.floor(Math.random() * bestMoves.length)] : moves[0];
+                },
+
+                minimax: (xQ, oQ, depth, alpha, beta, isMaximizing, maxDepth, aiSym) => {
+                    const key = `${xQ.join('')}|${oQ.join('')}|${isMaximizing}`;
+                    if (AI.transpositionTable[key] !== undefined && depth > 0) return AI.transpositionTable[key];
+
+                    const b = AI.constructBoard(xQ, oQ);
+                    const oppSym = aiSym === 'X' ? 'O' : 'X';
+                    
+                    if (!isMaximizing && AI.checkWinSim(b, aiSym)) return 1000 - depth;
+                    if (isMaximizing && AI.checkWinSim(b, oppSym)) return -1000 + depth;
+                    
+                    if (depth >= maxDepth) return AI.evaluateBoard(b, aiSym, xQ, oQ); 
+
+                    const moves = b.map((v, i) => v === null ? i : null).filter(v => v !== null);
+                    const currentTurn = isMaximizing ? aiSym : oppSym;
+
+                    let bestVal;
+                    if (isMaximizing) { 
+                        bestVal = -Infinity;
+                        for (let m of moves) {
+                            const nextX = [...xQ]; const nextO = [...oQ];
+                            if (currentTurn === 'X') { if (nextX.length >= 3) nextX.shift(); nextX.push(m); }
+                            else { if (nextO.length >= 3) nextO.shift(); nextO.push(m); }
+
+                            const eval = AI.minimax(nextX, nextO, depth + 1, alpha, beta, false, maxDepth, aiSym);
+                            bestVal = Math.max(bestVal, eval);
+                            alpha = Math.max(alpha, eval);
+                            if (beta <= alpha) break;
+                        }
+                    } else { 
+                        bestVal = Infinity;
+                        for (let m of moves) {
+                            const nextX = [...xQ]; const nextO = [...oQ];
+                            if (currentTurn === 'X') { if (nextX.length >= 3) nextX.shift(); nextX.push(m); }
+                            else { if (nextO.length >= 3) nextO.shift(); nextO.push(m); }
+
+                            const eval = AI.minimax(nextX, nextO, depth + 1, alpha, beta, true, maxDepth, aiSym);
+                            bestVal = Math.min(bestVal, eval);
+                            beta = Math.min(beta, eval);
+                            if (beta <= alpha) break;
+                        }
+                    }
+                    
+                    AI.transpositionTable[key] = bestVal;
+                    return bestVal;
+                },
+
+                evaluateBoard: (b, aiSym, xQ, oQ) => {
+                    let score = 0;
+                    const oppSym = aiSym === 'X' ? 'O' : 'X';
+                    const aiMoves = aiSym === 'X' ? xQ : oQ;
+                    const oppMoves = aiSym === 'X' ? oQ : xQ;
+
+                    const lines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+                    for(let l of lines) {
+                        let aiCount = 0, oppCount = 0;
+                        let aiFresh = 0, oppFresh = 0;
+
+                        for(let pos of l) {
+                            if (b[pos] === aiSym) {
+                                aiCount++;
+                                if (aiMoves.indexOf(pos) > 0) aiFresh++; 
+                            } else if (b[pos] === oppSym) {
+                                oppCount++;
+                                if (oppMoves.indexOf(pos) > 0) oppFresh++;
+                            }
+                        }
+
+                        if (aiCount === 2 && oppCount === 0) score += 10 + (aiFresh * 2);
+                        if (oppCount === 2 && aiCount === 0) score -= 10 + (oppFresh * 2);
+                        if (aiCount === 1 && oppCount === 0) score += 1;
+                        if (oppCount === 1 && aiCount === 0) score -= 1;
+                    }
+                    if (b[4] === aiSym) score += 5;
+                    if (b[4] === oppSym) score -= 5;
+                    return score;
+                },
+
+                constructBoard: (xQ, oQ) => {
+                    const b = Array(9).fill(null);
+                    xQ.forEach(p => b[p] = 'X');
+                    oQ.forEach(p => b[p] = 'O');
+                    return b;
+                },
+
+                checkWinSim: (b, p) => {
+                    const lines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+                    return lines.some(l => b[l[0]]===p && b[l[1]]===p && b[l[2]]===p);
+                }
+            };
+
+            function getBoardState() { const b = Array(9).fill(null); state.game.xMoves.forEach(i => b[i] = 'X'); state.game.oMoves.forEach(i => b[i] = 'O'); return b; }
+
+            function checkWin() {
+                const b = getBoardState();
+                const lines = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+                for (let l of lines) {
+                    const [x,y,z] = l;
+                    if (b[x] && b[x] === b[y] && b[x] === b[z]) {
+                        state.game.winner = b[x]; state.game.winningLine = l;
+                        state.game.scores[b[x].toLowerCase()]++;
+                        clearInterval(state.game.timerId); AudioEngine.win(); render(); return true;
+                    }
+                }
+                return false;
+            }
+
+            function startTimer() {
+                clearInterval(state.game.timerId); state.game.timer = 30;
+                state.game.timerId = setInterval(() => {
+                    if (state.game.winner) return clearInterval(state.game.timerId);
+                    state.game.timer--;
+                    if (state.game.timer <= 3 && state.game.timer > 0) AudioEngine.tick();
+                    const el = document.getElementById('game-timer');
+                    if (el) {
+                        el.innerText = state.game.timer < 30 ? '0' + state.game.timer : state.game.timer;
+                        el.className = `font-code text-2xl ${state.game.timer <= 3 ? 'text-red-500 animate-ping' : 'text-gray-400'}`;
+                    }
+                    if (state.game.timer <= 0) {
+                        clearInterval(state.game.timerId);
+                        const opp = state.game.turn === 'X' ? 'O' : 'X';
+                        state.game.winner = opp; state.game.scores[opp.toLowerCase()]++;
+                        AudioEngine.win(); render();
+                    }
+                }, 1000);
+            }
+
+            function handleCellClick(i, isAI = false) {
+                if (state.game.winner || getBoardState()[i]) return;
+                
+                const currentTurn = state.game.turn;
+                const isCpuTurn = state.mode === 'pve' && currentTurn === state.config.cpu;
+                if (isCpuTurn && !isAI) return; 
+
+                if (!isAI) AudioEngine.init();
+                
+                const moves = currentTurn === 'X' ? state.game.xMoves : state.game.oMoves;
+                if (moves.length >= 3) moves.shift();
+                moves.push(i);
+                
+                if (currentTurn === 'X') { AudioEngine.placeX(); state.game.turn = 'O'; }
+                else { AudioEngine.placeO(); state.game.turn = 'X'; }
+
+                if (!checkWin()) {
+                    startTimer(); render();
+                    if (state.mode === 'pve' && state.game.turn === state.config.cpu) {
+                        AI.play(state.difficulty);
+                    }
+                }
+            }
+
+            function resetGame() {
+                AudioEngine.click(); clearInterval(state.game.timerId);
+                state.game.xMoves = []; state.game.oMoves = []; state.game.turn = 'X'; state.game.winner = null; state.game.winningLine = [];
+                
+                if (state.mode === 'pve' && state.difficulty === 4) {
+                    const cpuStarts = Math.random() > 0.5;
+                    state.config.player = cpuStarts ? 'O' : 'X';
+                    state.config.cpu = cpuStarts ? 'X' : 'O';
+                } else {
+                    state.config.player = 'X';
+                    state.config.cpu = 'O';
+                }
+
+                startTimer(); 
+                render();
+
+                if (state.mode === 'pve' && state.config.cpu === 'X') {
+                    AI.play(state.difficulty);
+                }
+            }
+
+            function shareGame() {
+                const url = "https://www.infinitytictactoe.com";
+                const textArea = document.createElement("textarea");
+                textArea.value = url;
+                textArea.style.position = "fixed";
+                textArea.style.left = "-9999px";
+                textArea.style.top = "0";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const btn = document.getElementById('share-btn');
+                    if (btn) {
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = '<span class="text-green-400">COPIED!</span>';
+                        setTimeout(() => btn.innerHTML = originalText, 2000);
+                    }
+                } catch (err) {}
+                document.body.removeChild(textArea);
+            }
+
+            // SCROLL HANDLER: Fixed to work robustly in all environments
+            window.scrollToRules = () => {
+                const rules = document.getElementById('rules-section');
+                if (rules) {
+                    rules.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            };
+
+            const LandingView = () => `
+                <div class="flex-1 flex flex-col items-center justify-center p-4 relative min-h-[90vh]">
+                    <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyber-accent/5 via-transparent to-transparent pointer-events-none"></div>
+                    <header class="text-center mb-16 relative z-10">
+                        <h1 class="font-hero text-5xl md:text-8xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyber-accent to-white animate-pulse">NEON INFINITY</h1>
+                        <h2 class="text-cyber-accent tracking-[0.5em] text-sm md:text-xl font-code">TIC-TAC-TOE // ARENA 2026</h2>
+                    </header>
+                    <nav class="flex flex-col gap-6 w-full max-w-md relative z-10">
+                        <button onmouseenter="window.playHover()" onclick="window.selectPvE()" class="group relative px-8 py-6 bg-cyber-panel border border-cyber-accent/30 hover:border-cyber-accent rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-cyber-accent/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                            <div class="flex items-center justify-between relative z-10">
+                                <div class="text-left"><span class="block text-2xl font-hero text-white mb-1">SINGLE PLAYER</span><span class="text-xs text-gray-400 font-code tracking-wider">VS C.P.U. // 4 MODES</span></div>
+                                <svg class="w-8 h-8 text-cyber-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                            </div>
+                        </button>
+                        <button onmouseenter="window.playHover()" onclick="window.startPvP()" class="group relative px-8 py-6 bg-cyber-panel border border-cyber-danger/30 hover:border-cyber-danger rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02]">
+                            <div class="absolute inset-0 bg-cyber-danger/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></div>
+                            <div class="flex items-center justify-between relative z-10">
+                                <div class="text-left"><span class="block text-2xl font-hero text-white mb-1">MULTIPLAYER</span><span class="text-xs text-gray-400 font-code tracking-wider">LOCAL PvP // NO AI</span></div>
+                                <svg class="w-8 h-8 text-cyber-danger" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                            </div>
+                        </button>
+                        <button id="share-btn" onmouseenter="window.playHover()" onclick="window.shareGame()" class="mt-4 flex items-center justify-center gap-2 text-xs font-code text-gray-500 hover:text-white transition-colors border border-gray-800 rounded p-2 hover:border-white">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"></path></svg>
+                            SHARE GAME LINK
+                        </button>
+                        <div class="text-center mt-8 animate-bounce-slow">
+                            <span class="text-gray-500 font-code text-xs cursor-pointer hover:text-cyber-accent transition-colors" onclick="window.scrollToRules()">SCROLL DOWN FOR RULES ↓</span>
+                        </div>
+                    </nav>
+                </div>
+            `;
+
+            const DifficultyView = () => `
+                <div class="flex-1 flex flex-col items-center justify-center p-4 min-h-[90vh]">
+                    <button onclick="window.setView('landing')" onmouseenter="window.playHover()" class="absolute top-8 left-8 text-gray-500 hover:text-white font-code flex items-center gap-2">← RETURN</button>
+                    <h2 class="text-4xl font-hero mb-12 text-center">SELECT <span class="text-cyber-accent">THREAT LEVEL</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-2xl">
+                        <button onmouseenter="window.playHover()" onclick="window.startPvE(1)" class="p-6 bg-cyber-panel border border-green-500/30 hover:border-green-500 hover:bg-green-900/20 rounded-xl transition-all group"><div class="text-green-400 font-hero text-2xl mb-2 group-hover:scale-110">RECRUIT</div><div class="text-gray-400 font-code text-xs">EASY // 90% RANDOM</div></button>
+                        <button onmouseenter="window.playHover()" onclick="window.startPvE(2)" class="p-6 bg-cyber-panel border border-yellow-500/30 hover:border-yellow-500 hover:bg-yellow-900/20 rounded-xl transition-all group"><div class="text-yellow-400 font-hero text-2xl mb-2 group-hover:scale-110">SOLDIER</div><div class="text-gray-400 font-code text-xs">MEDIUM // 3 MOVES AHEAD</div></button>
+                        <button onmouseenter="window.playHover()" onclick="window.startPvE(3)" class="p-6 bg-cyber-panel border border-orange-500/30 hover:border-orange-500 hover:bg-orange-900/20 rounded-xl transition-all group"><div class="text-orange-400 font-hero text-2xl mb-2 group-hover:scale-110">VETERAN</div><div class="text-gray-400 font-code text-xs">HARD // 6 MOVES AHEAD</div></button>
+                        <button onmouseenter="window.playHover()" onclick="window.startPvE(4)" class="p-6 bg-cyber-panel border border-red-500/30 hover:border-red-500 hover:bg-red-900/20 rounded-xl transition-all shadow-lg hover:shadow-red-500/20 group"><div class="text-red-500 font-hero text-2xl mb-2 group-hover:scale-110">WARGOD</div><div class="text-gray-400 font-code text-xs">EXPERT // UNBEATABLE</div></button>
+                    </div>
+                </div>
+            `;
+
+            const GameView = () => {
+                const board = getBoardState();
+                let dyingIndex = -1;
+                if (!state.game.winner) {
+                    if (state.game.turn === 'X' && state.game.xMoves.length === 3) dyingIndex = state.game.xMoves[0];
+                    if (state.game.turn === 'O' && state.game.oMoves.length === 3) dyingIndex = state.game.oMoves[0];
+                }
+                const xActive = state.game.turn === 'X' && !state.game.winner;
+                const oActive = state.game.turn === 'O' && !state.game.winner;
+                
+                const p1Label = state.config.player === 'X' ? 'PLAYER X (YOU)' : 'C.P.U. (X)';
+                const p2Label = state.config.player === 'O' ? 'PLAYER O (YOU)' : 'C.P.U. (O)';
+                const p1Final = state.mode === 'pvp' ? 'PLAYER X' : p1Label;
+                const p2Final = state.mode === 'pvp' ? 'PLAYER O' : p2Label;
+
+                return `
+                <div class="flex-1 flex flex-col items-center justify-center relative min-h-[90vh]">
+                    <div class="absolute top-0 w-full p-4 flex justify-between items-center z-20 bg-black/20 backdrop-blur-sm">
+                        <button onclick="window.exitGame()" onmouseenter="window.playHover()" class="text-gray-400 hover:text-white font-code text-xs flex items-center gap-2 px-4 py-2 border border-transparent hover:border-gray-700 rounded transition-all">← ABORT</button>
+                        <div class="flex items-center gap-4">
+                            <div class="flex flex-col items-center justify-center w-32 h-16 bg-cyber-panel rounded border transition-all duration-300 ${xActive ? 'border-cyber-accent shadow-[0_0_15px_rgba(0,240,255,0.4)] scale-105' : 'border-gray-800 opacity-70'}">
+                                <span class="text-[8px] text-cyber-accent font-bold tracking-widest">${p1Final}</span>
+                                <span class="text-2xl font-code text-white">${state.game.scores.x}</span>
+                            </div>
+                            <div class="w-20 h-16 flex flex-col items-center justify-center relative">
+                                ${state.game.winner 
+                                    ? `<button onclick="window.resetGame()" onmouseenter="window.playHover()" class="flex flex-col items-center justify-center group w-full h-full"><span class="text-[8px] text-gray-500 font-code tracking-widest mb-1 group-hover:text-white">RESET</span><div class="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:scale-110 transition-transform shadow-[0_0_20px_white] animate-pulse"><svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg></div></button>`
+                                    : `<div class="flex flex-col items-center justify-center"><span class="text-[8px] text-gray-500 font-code tracking-widest mb-1">TIME</span><div id="game-timer" class="font-code text-2xl ${state.game.timer <= 3 ? 'text-red-500 animate-ping' : 'text-gray-400'}">${state.game.timer < 30 ? '0' + state.game.timer : state.game.timer}</div></div>`
+                                }
+                            </div>
+                            <div class="flex flex-col items-center justify-center w-32 h-16 bg-cyber-panel rounded border transition-all duration-300 ${oActive ? 'border-cyber-danger shadow-[0_0_15px_rgba(255,0,60,0.4)] scale-105' : 'border-gray-800 opacity-70'}">
+                                <span class="text-[8px] text-cyber-danger font-bold tracking-widest">${p2Final}</span>
+                                <span class="text-2xl font-code text-white">${state.game.scores.o}</span>
+                            </div>
+                        </div>
+                        <div class="w-20"></div> 
+                    </div>
+
+                    <div class="relative group mt-12">
+                        <div class="mb-4 text-center h-8">
+                            ${!state.game.winner ? `<div class="inline-flex items-center gap-2 px-4 py-1 rounded border border-gray-800 bg-black/50"><span class="text-xs text-gray-500 font-code">CURRENT TURN</span><span class="font-hero text-lg ${state.game.turn === 'X' ? 'text-cyber-accent' : 'text-cyber-danger'} animate-pulse">${state.game.turn}</span></div>` : ''}
+                        </div>
+                        <div class="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-cyber-accent rounded-tl-lg pointer-events-none"></div>
+                        <div class="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-cyber-danger rounded-tr-lg pointer-events-none"></div>
+                        <div class="absolute -bottom-3 -left-3 w-8 h-8 border-b-2 border-l-2 border-cyber-accent rounded-bl-lg pointer-events-none"></div>
+                        <div class="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-cyber-danger rounded-br-lg pointer-events-none"></div>
+                        <div class="bg-[#0a1120] p-4 rounded-xl border border-gray-800 shadow-[0_0_50px_rgba(0,240,255,0.05)] relative z-10">
+                            <div class="grid grid-cols-3 gap-3">
+                                ${board.map((cell, i) => {
+                                    const isWin = state.game.winningLine.includes(i);
+                                    const isDying = i === dyingIndex;
+                                    let svg = '';
+                                    if (cell === 'X') svg = `<svg viewBox="0 0 100 100" class="w-16 h-16 piece-enter ${isDying ? 'dying' : ''}" style="filter: drop-shadow(0 0 8px #00f0ff)"><path d="M25,25 L75,75 M75,25 L25,75" stroke="${isDying ? '#ff003c' : '#00f0ff'}" stroke-width="10" stroke-linecap="round" fill="none" /></svg>`;
+                                    else if (cell === 'O') svg = `<svg viewBox="0 0 100 100" class="w-16 h-16 piece-enter ${isDying ? 'dying' : ''}" style="filter: drop-shadow(0 0 8px #ff003c)"><circle cx="50" cy="50" r="30" stroke="${isDying ? '#ff003c' : '#ff7b00'}" stroke-width="10" fill="none" /></svg>`;
+                                    return `<button onmouseenter="window.playHover()" onclick="window.handleMove(${i})" class="w-24 h-24 sm:w-28 sm:h-28 bg-[#0f1829] rounded flex items-center justify-center hover:bg-[#152035] transition-colors border border-gray-800 ${isWin ? 'bg-white/10 border-white/50 shadow-[inset_0_0_20px_rgba(255,255,255,0.2)]' : ''}" ${cell || state.game.winner ? 'disabled' : ''}>${svg}</button>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                        <div class="mt-8 w-full text-center font-code text-xs h-10 flex flex-col items-center justify-center relative z-20">
+                            ${state.game.winner 
+                                ? (() => {
+                                    const isX = state.game.winner === 'X';
+                                    const cpuWin = state.mode === 'pve' && ((isX && state.config.cpu === 'X') || (!isX && state.config.cpu === 'O'));
+                                    const text = cpuWin ? "C.P.U. WON" : (isX ? "PLAYER X WON" : "PLAYER O WON");
+                                    const colorClass = isX ? "text-cyber-accent" : "text-cyber-danger";
+                                    return `<span class="${colorClass} text-3xl font-hero animate-bounce block drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] tracking-widest">${text}</span>`;
+                                })()
+                                : dyingIndex !== -1 
+                                    ? `<span class="text-cyber-danger animate-pulse bg-red-900/20 px-3 py-1 rounded border border-red-500/30">⚠ WARNING: OLDEST PIECE WILL VANISH</span>` 
+                                    : `<span class="text-gray-600">INFINITY ENGINE: ACTIVE</span>`
+                            }
+                        </div>
+                    </div>
+                </div>
+                `;
+            };
+            
+            function render() {
+                const app = document.getElementById('app');
+                if (state.view === 'landing') app.innerHTML = LandingView();
+                else if (state.view === 'difficulty') app.innerHTML = DifficultyView();
+                else if (state.view === 'game') app.innerHTML = GameView();
+            }
+
+            window.setView = (v) => { AudioEngine.click(); state.view = v; render(); };
+            window.selectPvE = () => { AudioEngine.click(); state.view = 'difficulty'; render(); };
+            window.startPvE = (d) => { state.difficulty = d; state.mode = 'pve'; state.view = 'game'; resetGame(); };
+            window.startPvP = () => { state.difficulty = 0; state.mode = 'pvp'; state.view = 'game'; resetGame(); };
+            window.exitGame = () => { AudioEngine.click(); clearInterval(state.game.timerId); state.view = 'landing'; render(); };
+            window.handleMove = (i) => handleCellClick(i);
+            window.resetGame = resetGame;
+            window.shareGame = shareGame;
+            window.playHover = AudioEngine.hover;
+
+            render();
+        });
+    </script>
+</body>
+</html>
