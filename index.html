@@ -26,12 +26,11 @@
     <meta property="og:description" content="Play the ultimate strategy game. 3-piece limit, vanishing moves, and intense neon visuals. Play free now.">
     <meta property="og:url" content="https://www.infinitytictactoe.com/">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.infinitytictactoe.com/thumbnail.jpg">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><style>.x{stroke:%2300f0ff;stroke-width:10;fill:none;}.bg{fill:%23030712;}</style><rect width='100' height='100' class='bg' rx='20'/><path d='M25,25 L75,75 M75,25 L25,75' class='x'/></svg>">
 
-    <!-- JSON-LD STRUCTURED DATA (Standard for GitHub) -->
+    <!-- JSON-LD STRUCTURED DATA -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -101,12 +100,13 @@
     </script>
 
     <style>
+        /* Force full height and dark background */
         html, body {
             height: 100%;
             width: 100%;
             margin: 0;
             padding: 0;
-            background-color: #030712;
+            background-color: #030712 !important;
             color: white;
             overflow-x: hidden;
             scroll-behavior: smooth;
@@ -151,13 +151,17 @@
         .seo-content ul { list-style-type: disc; padding-left: 1.5rem; color: #d1d5db; margin-bottom: 1rem; }
         .seo-content li { margin-bottom: 0.5rem; }
         .seo-content strong { color: white; }
+        
+        /* New Footer & Header Styles */
+        .site-footer a { color: #6b7280; transition: color 0.3s; }
+        .site-footer a:hover { color: #00f0ff; }
     </style>
 </head>
 <body class="bg-[#030508] text-white font-ui min-h-screen overflow-x-hidden flex flex-col relative selection:bg-cyber-accent selection:text-black">
 
     <div class="scanline"></div>
 
-    <!-- GAME AREA -->
+    <!-- GAME AREA (Includes Header/Nav inside LandingView) -->
     <div id="app" class="relative z-10 w-full min-h-[100vh] flex flex-col"></div>
 
     <!-- SEO CONTENT -->
@@ -188,8 +192,17 @@
                 <li><strong>Sleek Visuals:</strong> Enjoy a dark mode, cyberpunk aesthetic that is easy on the eyes.</li>
             </ul>
         </article>
-        <footer class="mt-12 text-center text-xs text-gray-600 font-code">
-            &copy; 2026 Infinity Tic-Tac-Toe. All rights reserved.
+        
+        <!-- SITE FOOTER -->
+        <footer class="mt-16 pt-8 border-t border-gray-800 text-center text-xs text-gray-600 font-code site-footer">
+            <div class="flex flex-wrap justify-center gap-6 mb-4">
+                <a href="index.html">HOME</a>
+                <a href="blog.html">BLOG</a>
+                <a href="contact.html">CONTACT</a>
+                <a href="privacy.html">PRIVACY POLICY</a>
+                <a href="terms.html">TERMS OF SERVICE</a>
+            </div>
+            <p>&copy; 2026 Infinity Tic-Tac-Toe. All rights reserved.</p>
         </footer>
     </section>
 
@@ -239,13 +252,12 @@
                         const aiSymbol = state.config.cpu;
                         
                         if (difficulty === 1) {
-                            // Recruit: 90% Random
                             if (Math.random() > 0.9) move = AI.findSmartMove(state.game.xMoves, state.game.oMoves, aiSymbol);
                             if (move === null || move === undefined) move = AI.randomMove(getBoardState());
                         }
                         else if (difficulty === 2) move = AI.minimaxRoot(3, aiSymbol); 
                         else if (difficulty === 3) move = AI.minimaxRoot(6, aiSymbol); 
-                        else move = AI.minimaxRoot(25, aiSymbol); // Wargod: Depth 25
+                        else move = AI.minimaxRoot(25, aiSymbol); 
 
                         if (move !== undefined && move !== null) handleCellClick(move, true);
                     }, 700);
@@ -509,7 +521,6 @@
                 document.body.removeChild(textArea);
             }
 
-            // SCROLL HANDLER: Fixed to work robustly in all environments
             window.scrollToRules = () => {
                 const rules = document.getElementById('rules-section');
                 if (rules) {
@@ -520,6 +531,13 @@
             const LandingView = () => `
                 <div class="flex-1 flex flex-col items-center justify-center p-4 relative min-h-[90vh]">
                     <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-cyber-accent/5 via-transparent to-transparent pointer-events-none"></div>
+                    
+                    <!-- Navigation / Header -->
+                    <div class="absolute top-4 right-4 flex gap-4 text-[10px] font-code text-gray-500 z-20">
+                        <a href="blog.html" class="hover:text-cyber-accent transition-colors">BLOG</a>
+                        <a href="contact.html" class="hover:text-cyber-accent transition-colors">CONTACT</a>
+                    </div>
+
                     <header class="text-center mb-16 relative z-10">
                         <h1 class="font-hero text-5xl md:text-8xl mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyber-accent to-white animate-pulse">NEON INFINITY</h1>
                         <h2 class="text-cyber-accent tracking-[0.5em] text-sm md:text-xl font-code">TIC-TAC-TOE // ARENA 2026</h2>
@@ -549,6 +567,8 @@
                     </nav>
                 </div>
             `;
+            
+            // ... (DifficultyView and GameView functions unchanged from previous perfect version) ...
 
             const DifficultyView = () => `
                 <div class="flex-1 flex flex-col items-center justify-center p-4 min-h-[90vh]">
