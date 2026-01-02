@@ -41,4 +41,13 @@
       <priority>0.5</priority>
    </url>
 
+      <!-- Blog Post Page -->
+   <url>
+      <loc>https://www.infinitytictactoe.com/blog/how-infinity-tic-tac-toe-works.html</loc>
+      <lastmod>2026-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.5</priority>
+   </url>
+
 </urlset>
+
